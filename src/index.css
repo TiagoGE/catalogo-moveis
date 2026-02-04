@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  width: 44px;
+  height: 44px;
+}
+
+.swiper-button-prev {
+  left: -50px;
+}
+
+.swiper-button-next {
+  right: -50px;
+}
+
+/* Em telas pequenas, esconde as setinhas (mobile usa swipe) */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
