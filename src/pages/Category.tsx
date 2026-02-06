@@ -29,7 +29,8 @@ export default function CategoryProducts() {
           const { data: productsData, error: prodError } = await supabase
             .from('products')
             .select('*')
-            .eq('category_id', categoryData.id);
+            .eq('category_id', categoryData.id)
+            .order('name', {ascending: true});
 
           if (prodError) throw prodError;
           if (productsData) setProducts(productsData);
